@@ -1,0 +1,13 @@
+// see notes here: https://github.com/rocker-org/devcontainer-templates/tree/main/src/r-ver
+// currently uses R 4.4.2
+{
+    "image": "ghcr.io/rocker-org/devcontainer/r-ver:4",
+    "features": {
+        "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+            "packages": "cli,rlang",
+            "installSystemRequirements": true
+        },
+        "ghcr.io/rocker-org/devcontainer-features/renv-cache:latest": {}
+    },
+    "postCreateCommand": "R -q -e 'renv::install()'"
+}
